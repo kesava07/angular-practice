@@ -1,0 +1,16 @@
+<div class="col-lg-4">
+    <h4>Videos List</h4>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let data of videosList">
+            <div class="row" *ngIf="data" (click)="handleSendVideo(data)" style="cursor: pointer">
+                <div class="col-lg-5">
+                    <img [src]="data.snippet.thumbnails.high.url" [alt]="data.snippet.description" width="100%"
+                        height="100%" />
+                </div>
+                <div class="col-lg-7">
+                    {{data.snippet.title}}
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

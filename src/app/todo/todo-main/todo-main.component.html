@@ -1,0 +1,22 @@
+<div class="container mt-5">
+    <form (ngSubmit)="submitTodo()" #frm="ngForm">
+        <div class="row">
+            <div class="col-lg-4">
+                <input required ngModel #todo="ngModel" name="todoText" type="text" class="form-control">
+            </div>
+            <div class="col-lg-2">
+                <button [disabled]="frm.invalid" class="btn btn-sm btn-success mt-1">ADD</button>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-lg-4">
+            <ul class="list-group">
+                <p *ngIf="todoList.length === 0" class="text-center text-danger mt-3">No todo's found</p>
+                <app-list *ngFor="let list of todoList ; let i = index" [todo]="list" [index]="i"
+                    (removeTodo)="handleRemoveTodo($event)" (editTodo)="handleEditTodo($event)">
+                </app-list>
+            </ul>
+        </div>
+    </div>
+</div>

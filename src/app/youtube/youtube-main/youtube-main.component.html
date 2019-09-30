@@ -1,0 +1,5 @@
+<div class="container-fluid mt-3">
+    <app-search-bar (getSearchText)="handleSubmitSearch($event)"></app-search-bar>
+    <app-videos-list (getVideo)="handleGetVideoData($event)" [videosList]="videosData"></app-videos-list>
+    <app-videos-player *ngIf="videoToPlay" [selectedVideo]="videoToPlay"></app-videos-player>
+</div>
