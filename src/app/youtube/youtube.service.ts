@@ -13,7 +13,7 @@ export class YoutubeService {
         let params = new URLSearchParams();
         params.append('part', 'snippet');
         params.append('maxResults', '10');
-        params.append('key', 'API KEY');
+        params.append('key', 'your api key');
         params.append('q', text);
         return this.http.get("https://www.googleapis.com/youtube/v3/search", { search: params })
             .map((response => response.json()))
